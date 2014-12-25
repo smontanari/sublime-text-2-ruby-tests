@@ -135,7 +135,6 @@ class BaseRubyTask(sublime_plugin.TextCommand):
     global THEME; THEME = s.get('theme')
     global TERMINAL_ENCODING; TERMINAL_ENCODING = s.get('terminal_encoding')
 
-
     rbenv   = s.get("check_for_rbenv")
     rvm     = s.get("check_for_rvm")
     bundler = s.get("check_for_bundler")
@@ -204,11 +203,13 @@ class BaseRubyTask(sublime_plugin.TextCommand):
       command = COMMAND_PREFIX + ' ' + command
     if int(sublime.version().split('.')[0]) <= 2:
       command = [command]
+
     self.view.window().run_command("exec", {
       "cmd": command,
       "shell": True,
       "working_dir": working_dir,
       "file_regex": r"([^ ]*\.rb):?(\d*)",
+      "path": os.popen('echo $PATH').read().split('\n')[0],
       "encoding": TERMINAL_ENCODING
     })
     self.display_results()
