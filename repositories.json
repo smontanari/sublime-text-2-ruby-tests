@@ -1,9 +1,25 @@
 {
-  "schema_version": "1.0.0",
-  "repositories": [
-    "https://github.com/smontanari/sublime-text-2-ruby-tests"
-  ],
-  "package_name_map": {
-    "sublime-text-2-ruby-tests": "RubyTest"
-  }
+  "schema_version": "3.0.0",
+  "packages": [
+    {
+      "name": "RubyTest",
+      "details": "https://github.com/smontanari/sublime-text-2-ruby-tests",
+      "author": "smontanari",
+      "releases": [
+        {
+          "sublime_text": "*",
+          "tags": true
+        }
+      ]
+    }
+  ]
 }
+// {
+//   "schema_version": "1.0.0",
+//   "repositories": [
+//     "https://github.com/smontanari/sublime-text-2-ruby-tests"
+//   ],
+//   "package_name_map": {
+//     "sublime-text-2-ruby-tests": "RubyTest"
+//   }
+// }
